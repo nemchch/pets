@@ -77,6 +77,7 @@ logic or annotations for fields needed.
 4. Saving timestamps to be able to have a history log of changing states of a pet in time.
 5. Add more filters and `group by` options, change implementation to be it more flexible and support more cases easily.
 6. Add SwaggerUI and provide some docs for using APIs.
+7. Not storing DB В in the application.properties file.
 
 ... and so on :)
 
