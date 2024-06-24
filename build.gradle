@@ -1,0 +1,59 @@
+plugins {
+    id 'org.springframework.boot' version '3.2.1'
+    id 'com.github.node-gradle.node' version '3.5.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    lombokVersion = '1.18.32'
+    springframeworkVersion = '6.1.10'
+    springBootVersion = '3.3.1'
+    libJacksonVersion = '2.17.1'
+}
+
+apply plugin: 'java'
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+dependencies {
+
+    // Jakarta
+    implementation "jakarta.servlet:jakarta.servlet-api:6.1.0-M2"
+
+    // SLF4J logging
+    implementation "org.slf4j:slf4j-api:2.0.13"
+
+    // Spring Framework
+    implementation "org.springframework:spring-webmvc:${springframeworkVersion}"
+    implementation "org.springframework:spring-context:${springframeworkVersion}"
+
+    // Spring Boot
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+    implementation "org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}"
+
+    // H2
+    runtimeOnly 'com.h2database:h2:2.1.214'
+
+    // Lombok
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+    // Tests
+    testImplementation "org.junit.jupiter:junit-jupiter-params:5.10.1"
+    testImplementation "org.assertj:assertj-core:3.12.2"
+    testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+    testImplementation "org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}"
+    testImplementation "org.mockito:mockito-core:2.25.1"
+    testImplementation 'org.apache.httpcomponents.client5:httpclient5:5.2.1'
+}
+
+test {
+    useJUnitPlatform()
+}
