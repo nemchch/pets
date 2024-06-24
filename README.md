@@ -14,7 +14,7 @@ contains Unit tests for the implementation of the
 2. [PetControllerIntegrationTest.java](src%2Ftest%2Fjava%2Fcom%2Ftractive%2Fpets%2Fservice%2Fimpl%2FPetControllerIntegrationTest.java)
 contains integration tests for main use cases.
 
-You don't need to set anything additionally. Just run it in your IDE.
+You don't need to set anything additional. Just run it in your IDE.
 
 ## Usage
 
@@ -66,7 +66,7 @@ For getting information about the number of pets currently outside the power sav
 tracker type please use an endpoint GET `/api/v1/pet/statistics` without any parameters. 
 
 ## Implementation details
-Even if it's not the best practice, I tool a decision to use `@Entity` files as DTOs in REST API calls. I did that
+Even if it's not the best practice, I took a decision to use `@Entity` files as DTOs in REST API calls. I did that
 in order to save time and not create additional classes, because it's a small test project and there's no other 
 logic or annotations for fields needed. 
 
@@ -75,9 +75,9 @@ logic or annotations for fields needed.
 2. Using not REST API calls but a message broker (Kafka, RabbitMQ, etc.) for receiving data.
 3. Saving tracking data in a bulk scheduled operation e.g. once per a second.
 4. Saving timestamps to be able to have a history log of changing states of a pet in time.
-5. Add more filters and `group by` options, change implementation to be it more flexible and support more cases easily.
+5. Add more filters and `group by` options, change implementation to be more flexible and support more cases easily.
 6. Add SwaggerUI and provide some docs for using APIs.
-7. Not storing DB В in the application.properties file.
+7. Not storing DB credentials in the application.properties file.
 
 ... and so on :)
 
